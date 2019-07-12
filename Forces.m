@@ -32,8 +32,9 @@ Dm=@(x,pro,ret,nul)... % cf Table 1
     pro.*(F1+F2*x+F3*x.^2)+...                   % protraction
     ret.*(G1+G2*x);                             % retraction
 
-DKmDt=@(x,v,pro,ret,nul)... % cf equations in text near Table 1
-    pro.*(C2+C3*x)+...
+% cf equations in text near Table 1 note pro,ret,nul is of the entire hinge not just the rad/od
+DKmDt=@(x,v,pro,ret,nul)... 
+    pro.*(C2+2*C3*x)+...
     ret.*(x>0.003).*(D2*v); % ignore delta function at x=0.003
 
 Fk=@(x,v,pro,ret,nul)Kk(x,pro,ret,nul).*x+Dk.*v; 
