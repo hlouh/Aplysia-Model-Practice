@@ -49,7 +49,7 @@ dx=0.0016; % m
 xtargetplot=xtarget(tspan,dx);
 figure
 subplot(7,1,6:7)
-plot(tspan,xtargetplot,'LineWidth',3)
+plot(tspan,xtargetplot,'LineWidth',2)
 xlabel('Time(s)')
 ylabel('Displacement(m)')
 set(gca,'FontSize',10)
@@ -167,7 +167,7 @@ Fkelvin=Fk(xtargetplot,0,...
 %% Total Force
 Ftotal=Fm+Fkelvin';
 subplot(7,1,1:4);
-plot(tall,Ftotal);
+plot(tall,Ftotal,'LineWidth',2);
 title('Passive Hinge Force Over Time');
 xlabel('Time(s)');
 ylabel('Force(N)');
