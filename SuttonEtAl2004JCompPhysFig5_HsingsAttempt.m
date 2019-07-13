@@ -48,11 +48,11 @@ tspan=linspace(tmin,tmax,20*100+1); % 20 stairsteps, 100 points each
 dx=0.0016; % m
 xtargetplot=xtarget(tspan,dx);
 figure
-subplot(3,1,3)
+subplot(7,1,6:7)
 plot(tspan,xtargetplot,'LineWidth',3)
-xlabel('Time (sec)')
-ylabel('Disp. (cm)')
-set(gca,'FontSize',20)
+xlabel('Time(s)')
+ylabel('Displacement(m)')
+set(gca,'FontSize',10)
 %% Run
 tstep=tspan(2)-tspan(1); % size of each time step
 Fmstop=0; % N
@@ -166,8 +166,9 @@ Fkelvin=Fk(xtargetplot,0,...
 
 %% Total Force
 Ftotal=Fm+Fkelvin';
-figure
+subplot(7,1,1:4);
 plot(tall,Ftotal);
 title('Passive Hinge Force Over Time');
 xlabel('Time(s)');
 ylabel('Force(N)');
+set(gca,'FontSize',10)
